@@ -1,0 +1,11 @@
+body {
+    background-image: url(https://www.cnet.com/wp-content/uploads/sites/2/70540e9a-3bf5-4dc5-bf8c-7d4badbb6ba5.jpg); 
+    
+    background-repeat: no-repeat; 
+    
+    background-position: center; 
+    
+    background-size: cover; 
+    
+    background-attachment: fixed; 
+}
