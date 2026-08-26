@@ -9,16 +9,15 @@
     <p id="content"></p>
 
     <input type="text" id="name" placeholder="Enter your name">
-    <button onclick = "closeMessage(), hello()">Submit</button>
+    <button onclick = "hello()">Submit</button>
 
     <script>
         function hello(){
             let name = document.getElementById("name").value;
             document.getElementById("content").innerHTML = "Hello " + name
-        }
-
-        function closeMessage(){
-            alert("I'll miss you james ban");
+            setTimeout(() => {
+                alert("I miss you " + name)
+            }, 500);
         }
     </script>
 
