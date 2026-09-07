@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+    
+        function calculateGrade() {
+            let grade = Number(document.getElementById("score").value);
+            let totalscore = Number(document.getElementById("totalscore").value);
+            let result = document.getElementById("result");
+            result = Number(grade / totalscore) * 100;
+
+            let select = document.getElementById("selection").value;
+            if(select == "lettergrade") {
+                if (result >= 91) {
+                    result = "Excellent";
+                    document.getElementById('Image').src = "on.jpg";
+                } else if (result >= 80) {
+                    result = "Great";
+                    document.getElementById('Image').src = "on.jpg";
+                } else if (result >= 70) {
+                    result = "Good";
+                    document.getElementById('Image').src = "on.jpg";
+                } else if (result >= 60) {
+                    result = "Nice";
+                    document.getElementById('Image').src = "off.jpg";
+                } else {
+                    result = "Fail";
+                    document.getElementById('Image').src = "off.jpg";
+                }
+            } else if(select == "passfail") {
+                if (result >= 75) {
+                    result = "Pass";
+                    document.getElementById('Image').src = "on.jpg";
+                } else {
+                    result = "Fail";
+                    document.getElementById('Image').src = "off.jpg";
+                }
+            }
+            document.getElementById('result').textContent = result;
+
+        }
+            
+    </script>
+
+    <p id = "result">Enter your score</p>
+    <input type="text" id="score" placeholder="Enter your score">
+    <input type="text" id="totalscore" placeholder="Enter the Total Score">
+    <select id = "selection">
+        <option value = "lettergrade">Letter Grade</option>
+        <option value = "passfail">Pass/Fail</option>
+    </select>    
+    <button onclick="calculateGrade()">Calculate Score</button>
+
+    <br><img src="ON.jpg" id="Image">
+</body>
+</html>
